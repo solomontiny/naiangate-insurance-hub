@@ -72,14 +72,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "N" },
+      { name: "description", content: "Naiangate Connect is a modern, responsive insurance website built with React and Tailwind CSS." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "N" },
+      { property: "og:description", content: "Naiangate Connect is a modern, responsive insurance website built with React and Tailwind CSS." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "N" },
+      { name: "twitter:description", content: "Naiangate Connect is a modern, responsive insurance website built with React and Tailwind CSS." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/8f173704-71cf-47c9-9ce7-3483f52fd578/id-preview-a614d906--25fd5be3-7f14-4c69-b07d-49914bf34f2b.lovable.app-1778767348146.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/8f173704-71cf-47c9-9ce7-3483f52fd578/id-preview-a614d906--25fd5be3-7f14-4c69-b07d-49914bf34f2b.lovable.app-1778767348146.png" },
     ],
     links: [
       {
