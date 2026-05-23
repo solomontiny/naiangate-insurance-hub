@@ -22,7 +22,7 @@ export function Footer() {
         <div>
           <h4 className="mb-3 text-sm font-semibold uppercase tracking-wider text-accent">Offices</h4>
           <ul className="space-y-2 text-sm text-primary-foreground/80">
-            <li className="flex gap-2"><MapPin className="h-4 w-4 shrink-0 mt-0.5" />26 Sumbo Jibowu St, Ikoyi, Lagos</li>
+            <li className="flex gap-2"><MapPin className="h-4 w-4 shrink-0 mt-0.5" />5a Adekunle Lawal Street, off Oba Adeyinka Oyekan Road, Ikoyi, Lagos Nigeria</li>
             <li className="flex gap-2"><MapPin className="h-4 w-4 shrink-0 mt-0.5" />42 Kenneth Dike Way, Bodija, Ibadan</li>
             <li className="flex gap-2"><MapPin className="h-4 w-4 shrink-0 mt-0.5" />9 Tema St, Wuse Zone 6, Abuja</li>
           </ul>
