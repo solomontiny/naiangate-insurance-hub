@@ -14,7 +14,7 @@ export const Route = createFileRoute("/contact")({
 });
 
 const offices = [
-  { city: "Lagos", addr: "26 Sumbo Jibowu Street, Ikoyi, Lagos" },
+  { city: "Lagos", addr: "5a Adekunle Lawal Street, off Oba Adeyinka Oyekan Road, Ikoyi, Lagos Nigeria" },
   { city: "Ibadan", addr: "42 Kenneth Dike Way, Opp Peter and Paul Seminary, Bodija, Ibadan" },
   { city: "Abuja", addr: "9 Tema Street, Off Rabat Street, Wuse Zone 6, Abuja" },
 ];
