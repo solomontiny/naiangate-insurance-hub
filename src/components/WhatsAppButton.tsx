@@ -1,6 +1,6 @@
 import { MessageCircle } from "lucide-react";
 
-const WHATSAPP_NUMBER = "2348000000000"; // Replace with real Naingate WhatsApp number
+const WHATSAPP_NUMBER = "2348024189052"; // Naingate admin WhatsApp
 const PREFILLED = encodeURIComponent("Hello Naingate Insurance, I'd like to speak with an advisor.");
 
 export function WhatsAppButton() {
