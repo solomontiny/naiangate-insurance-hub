@@ -13,10 +13,12 @@ import { Route as SponsorshipRouteImport } from './routes/sponsorship'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ProductsRouteImport } from './routes/products'
 import { Route as PartnersRouteImport } from './routes/partners'
+import { Route as ManagementRouteImport } from './routes/management'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ClaimsRouteImport } from './routes/claims'
 import { Route as CareersRouteImport } from './routes/careers'
+import { Route as BoardRouteImport } from './routes/board'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AdminLoginRouteImport } from './routes/admin.login'
@@ -42,6 +44,11 @@ const PartnersRoute = PartnersRouteImport.update({
   path: '/partners',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ManagementRoute = ManagementRouteImport.update({
+  id: '/management',
+  path: '/management',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const FaqRoute = FaqRouteImport.update({
   id: '/faq',
   path: '/faq',
@@ -60,6 +67,11 @@ const ClaimsRoute = ClaimsRouteImport.update({
 const CareersRoute = CareersRouteImport.update({
   id: '/careers',
   path: '/careers',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BoardRoute = BoardRouteImport.update({
+  id: '/board',
+  path: '/board',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -86,10 +98,12 @@ const AdminDashboardRoute = AdminDashboardRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/board': typeof BoardRoute
   '/careers': typeof CareersRoute
   '/claims': typeof ClaimsRoute
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
+  '/management': typeof ManagementRoute
   '/partners': typeof PartnersRoute
   '/products': typeof ProductsRoute
   '/services': typeof ServicesRoute
@@ -100,10 +114,12 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/board': typeof BoardRoute
   '/careers': typeof CareersRoute
   '/claims': typeof ClaimsRoute
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
+  '/management': typeof ManagementRoute
   '/partners': typeof PartnersRoute
   '/products': typeof ProductsRoute
   '/services': typeof ServicesRoute
@@ -115,10 +131,12 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/board': typeof BoardRoute
   '/careers': typeof CareersRoute
   '/claims': typeof ClaimsRoute
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
+  '/management': typeof ManagementRoute
   '/partners': typeof PartnersRoute
   '/products': typeof ProductsRoute
   '/services': typeof ServicesRoute
@@ -131,10 +149,12 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/board'
     | '/careers'
     | '/claims'
     | '/contact'
     | '/faq'
+    | '/management'
     | '/partners'
     | '/products'
     | '/services'
@@ -145,10 +165,12 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/board'
     | '/careers'
     | '/claims'
     | '/contact'
     | '/faq'
+    | '/management'
     | '/partners'
     | '/products'
     | '/services'
@@ -159,10 +181,12 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/board'
     | '/careers'
     | '/claims'
     | '/contact'
     | '/faq'
+    | '/management'
     | '/partners'
     | '/products'
     | '/services'
@@ -174,10 +198,12 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  BoardRoute: typeof BoardRoute
   CareersRoute: typeof CareersRoute
   ClaimsRoute: typeof ClaimsRoute
   ContactRoute: typeof ContactRoute
   FaqRoute: typeof FaqRoute
+  ManagementRoute: typeof ManagementRoute
   PartnersRoute: typeof PartnersRoute
   ProductsRoute: typeof ProductsRoute
   ServicesRoute: typeof ServicesRoute
@@ -216,6 +242,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PartnersRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/management': {
+      id: '/management'
+      path: '/management'
+      fullPath: '/management'
+      preLoaderRoute: typeof ManagementRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/faq': {
       id: '/faq'
       path: '/faq'
@@ -242,6 +275,13 @@ declare module '@tanstack/react-router' {
       path: '/careers'
       fullPath: '/careers'
       preLoaderRoute: typeof CareersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/board': {
+      id: '/board'
+      path: '/board'
+      fullPath: '/board'
+      preLoaderRoute: typeof BoardRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -278,10 +318,12 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  BoardRoute: BoardRoute,
   CareersRoute: CareersRoute,
   ClaimsRoute: ClaimsRoute,
   ContactRoute: ContactRoute,
   FaqRoute: FaqRoute,
+  ManagementRoute: ManagementRoute,
   PartnersRoute: PartnersRoute,
   ProductsRoute: ProductsRoute,
   ServicesRoute: ServicesRoute,
