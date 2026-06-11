@@ -58,7 +58,7 @@ export function Footer() {
             </li>
             <li className="flex items-center gap-2">
               <Phone className="h-4 w-4 shrink-0" />
-              <span>+234 (0) 800 000 0000</span>
+              <a href="https://wa.me/2348023189052" className="hover:text-accent">+234 802 318 9052 (WhatsApp)</a>
             </li>
           </ul>
         </div>
