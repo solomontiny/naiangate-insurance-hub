@@ -109,33 +109,35 @@ function ManagementPage() {
               key={m.name}
               className="group relative overflow-hidden rounded-3xl border border-border bg-card shadow-[var(--shadow-card)] transition duration-300 hover:-translate-y-1.5 hover:shadow-[var(--shadow-elegant)]"
             >
-              <div className="relative aspect-[4/5] overflow-hidden bg-secondary/30">
-                <img
-                  src={m.photo}
-                  alt={`Portrait of ${m.name}`}
-                  loading="lazy"
-                  className="h-full w-full object-cover object-top transition duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/85 via-primary/10 to-transparent opacity-0 transition duration-500 group-hover:opacity-100" />
-                <span className="absolute left-3 top-3 rounded-full bg-background/85 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-primary backdrop-blur">
-                  {m.department}
-                </span>
-                <div className="absolute inset-x-4 bottom-4 translate-y-3 opacity-0 transition duration-500 group-hover:translate-y-0 group-hover:opacity-100">
-                  <div className="flex gap-2">
-                    <a
-                      href="#"
-                      aria-label={`${m.name} on LinkedIn`}
-                      className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-background/90 text-primary backdrop-blur transition hover:bg-accent hover:text-accent-foreground"
-                    >
-                      <Linkedin className="h-4 w-4" />
-                    </a>
-                    <a
-                      href="mailto:info@naingateinsurancebrokers.com"
-                      aria-label={`Email ${m.name}`}
-                      className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-background/90 text-primary backdrop-blur transition hover:bg-accent hover:text-accent-foreground"
-                    >
-                      <Mail className="h-4 w-4" />
-                    </a>
+              <div className="p-3 sm:p-4" style={{ background: "var(--gradient-gold)" }}>
+                <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-secondary/30 ring-1 ring-primary/10 shadow-[inset_0_0_0_2px_rgba(255,255,255,0.65)]">
+                  <img
+                    src={m.photo}
+                    alt={`Portrait of ${m.name}`}
+                    loading="lazy"
+                    className="h-full w-full object-cover object-top transition duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/85 via-primary/10 to-transparent opacity-0 transition duration-500 group-hover:opacity-100" />
+                  <span className="absolute left-3 top-3 rounded-full bg-background/85 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-primary backdrop-blur">
+                    {m.department}
+                  </span>
+                  <div className="absolute inset-x-4 bottom-4 translate-y-3 opacity-0 transition duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+                    <div className="flex gap-2">
+                      <a
+                        href="#"
+                        aria-label={`${m.name} on LinkedIn`}
+                        className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-background/90 text-primary backdrop-blur transition hover:bg-accent hover:text-accent-foreground"
+                      >
+                        <Linkedin className="h-4 w-4" />
+                      </a>
+                      <a
+                        href="mailto:info@naingateinsurancebrokers.com"
+                        aria-label={`Email ${m.name}`}
+                        className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-background/90 text-primary backdrop-blur transition hover:bg-accent hover:text-accent-foreground"
+                      >
+                        <Mail className="h-4 w-4" />
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
