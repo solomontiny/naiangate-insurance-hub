@@ -1,7 +1,16 @@
 {
-  "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "tanstack-start-app",
-  "compatibility_date": "2025-09-24",
-  "compatibility_flags": ["nodejs_compat"],
-  "main": "src/server.ts",
+  "name": "naiangate-insurance-hub",
+  "main": "./dist/server/server.js",
+  "compatibility_date": "2026-06-11",
+
+  "assets": {
+    "directory": "./dist/client",
+    "binding": "ASSETS"
+  },
+
+  "build": {
+    "command": "npm run build"
+  },
+
+  "routes": []
 }

@@ -13,7 +13,6 @@ import { Route as SponsorshipRouteImport } from './routes/sponsorship'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ProductsRouteImport } from './routes/products'
 import { Route as PartnersRouteImport } from './routes/partners'
-import { Route as ManagementRouteImport } from './routes/management'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ClaimsRouteImport } from './routes/claims'
@@ -42,11 +41,6 @@ const ProductsRoute = ProductsRouteImport.update({
 const PartnersRoute = PartnersRouteImport.update({
   id: '/partners',
   path: '/partners',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ManagementRoute = ManagementRouteImport.update({
-  id: '/management',
-  path: '/management',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FaqRoute = FaqRouteImport.update({
@@ -103,7 +97,6 @@ export interface FileRoutesByFullPath {
   '/claims': typeof ClaimsRoute
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
-  '/management': typeof ManagementRoute
   '/partners': typeof PartnersRoute
   '/products': typeof ProductsRoute
   '/services': typeof ServicesRoute
@@ -119,7 +112,6 @@ export interface FileRoutesByTo {
   '/claims': typeof ClaimsRoute
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
-  '/management': typeof ManagementRoute
   '/partners': typeof PartnersRoute
   '/products': typeof ProductsRoute
   '/services': typeof ServicesRoute
@@ -136,7 +128,6 @@ export interface FileRoutesById {
   '/claims': typeof ClaimsRoute
   '/contact': typeof ContactRoute
   '/faq': typeof FaqRoute
-  '/management': typeof ManagementRoute
   '/partners': typeof PartnersRoute
   '/products': typeof ProductsRoute
   '/services': typeof ServicesRoute
@@ -154,7 +145,6 @@ export interface FileRouteTypes {
     | '/claims'
     | '/contact'
     | '/faq'
-    | '/management'
     | '/partners'
     | '/products'
     | '/services'
@@ -170,7 +160,6 @@ export interface FileRouteTypes {
     | '/claims'
     | '/contact'
     | '/faq'
-    | '/management'
     | '/partners'
     | '/products'
     | '/services'
@@ -186,7 +175,6 @@ export interface FileRouteTypes {
     | '/claims'
     | '/contact'
     | '/faq'
-    | '/management'
     | '/partners'
     | '/products'
     | '/services'
@@ -203,7 +191,6 @@ export interface RootRouteChildren {
   ClaimsRoute: typeof ClaimsRoute
   ContactRoute: typeof ContactRoute
   FaqRoute: typeof FaqRoute
-  ManagementRoute: typeof ManagementRoute
   PartnersRoute: typeof PartnersRoute
   ProductsRoute: typeof ProductsRoute
   ServicesRoute: typeof ServicesRoute
@@ -240,13 +227,6 @@ declare module '@tanstack/react-router' {
       path: '/partners'
       fullPath: '/partners'
       preLoaderRoute: typeof PartnersRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/management': {
-      id: '/management'
-      path: '/management'
-      fullPath: '/management'
-      preLoaderRoute: typeof ManagementRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/faq': {
@@ -323,7 +303,6 @@ const rootRouteChildren: RootRouteChildren = {
   ClaimsRoute: ClaimsRoute,
   ContactRoute: ContactRoute,
   FaqRoute: FaqRoute,
-  ManagementRoute: ManagementRoute,
   PartnersRoute: PartnersRoute,
   ProductsRoute: ProductsRoute,
   ServicesRoute: ServicesRoute,
@@ -334,3 +313,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
