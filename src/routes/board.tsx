@@ -58,13 +58,15 @@ function BoardPage() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {board.map((m) => (
             <article key={m.name} className="group overflow-hidden rounded-2xl border border-border bg-card shadow-[var(--shadow-card)] transition hover:-translate-y-1 hover:shadow-[var(--shadow-elegant)]">
-              <div className="aspect-[4/5] overflow-hidden bg-secondary/30">
-                <img
-                  src={m.photo}
-                  alt={`Portrait of ${m.name}`}
-                  loading="lazy"
-                  className="h-full w-full object-cover object-top transition duration-500 group-hover:scale-105"
-                />
+              <div className="p-3 sm:p-4" style={{ background: "var(--gradient-gold)" }}>
+                <div className="relative aspect-[4/5] overflow-hidden rounded-xl bg-secondary/30 ring-1 ring-primary/10 shadow-[inset_0_0_0_2px_rgba(255,255,255,0.65)]">
+                  <img
+                    src={m.photo}
+                    alt={`Portrait of ${m.name}`}
+                    loading="lazy"
+                    className="h-full w-full object-cover object-top transition duration-500 group-hover:scale-105"
+                  />
+                </div>
               </div>
               <div className="p-5">
                 <h2 className="text-base font-bold text-primary sm:text-lg">{m.name}</h2>
