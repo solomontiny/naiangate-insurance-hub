@@ -58,8 +58,16 @@ function BoardPage() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {board.map((m) => (
             <article key={m.name} className="group overflow-hidden rounded-2xl border border-border bg-card shadow-[var(--shadow-card)] transition hover:-translate-y-1 hover:shadow-[var(--shadow-elegant)]">
-              <div className="p-3 sm:p-4" style={{ background: "var(--gradient-gold)" }}>
-                <div className="relative aspect-[4/5] overflow-hidden rounded-xl bg-secondary/30 ring-1 ring-primary/10 shadow-[inset_0_0_0_2px_rgba(255,255,255,0.65)]">
+              <div
+                className="relative p-3 sm:p-4"
+                style={{
+                  background:
+                    "linear-gradient(135deg, #c9a14a 0%, #a8802f 46%, #fff3c4 50%, #a8802f 54%, #7a5a1c 100%)",
+                  boxShadow: "inset 0 0 0 1px rgba(255,236,179,0.55), inset 0 1px 0 rgba(255,255,255,0.4)",
+                }}
+              >
+                <span aria-hidden className="pointer-events-none absolute inset-y-3 left-1/2 w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-white/40 to-transparent sm:inset-y-4" />
+                <div className="relative aspect-[4/5] overflow-hidden rounded-xl bg-secondary/30 ring-1 ring-black/10 shadow-[inset_0_0_0_2px_rgba(255,255,255,0.7),0_8px_24px_-12px_rgba(0,0,0,0.45)]">
                   <img
                     src={m.photo}
                     alt={`Portrait of ${m.name}`}
