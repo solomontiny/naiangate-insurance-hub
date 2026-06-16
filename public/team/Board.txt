@@ -1,0 +1,9 @@
+public/
+  team/
+    Gabriel Egwuatu.png
+    Ezekiel Olabode.png
+    Ifeoma isinguzo.png
+    Joseph Folarin.png
+    Kayode Adeoye.png
+    Lawrence Ojebode.png
+    Olubukola Abitoye.png
