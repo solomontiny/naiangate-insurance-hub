@@ -1,16 +1,25 @@
 {
   "name": "naiangate-insurance-hub",
-  "main": "./dist/server/server.js",
   "compatibility_date": "2026-06-11",
 
   "assets": {
     "directory": "./dist/client",
-    "binding": "ASSETS"
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application"
   },
 
-  "build": {
-    "command": "npm run build"
-  },
+  "routes": [
+    {
+      "pattern": "naingateinsurancebrokers.com/*",
+      "custom_domain": true
+    },
+    {
+      "pattern": "www.naingateinsurancebrokers.com/*",
+      "custom_domain": true
+    }
+  ],
 
-  "routes": []
+  "observability": {
+    "enabled": true
+  }
 }
