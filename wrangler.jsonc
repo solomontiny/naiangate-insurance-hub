@@ -1,16 +1,9 @@
 {
   "name": "naiangate-insurance-hub",
-  "main": "./dist/server/server.js",
   "compatibility_date": "2026-06-11",
+  "compatibility_flags": ["nodejs_compat"],
 
   "assets": {
-    "directory": "./dist/client",
-    "binding": "ASSETS"
-  },
-
-  "build": {
-    "command": "npm run build"
-  },
-
-  "routes": []
+    "directory": "./dist/client"
+  }
 }
